@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" onKeyPressed="#onProgressKeyPress" prefHeight="530.0" prefWidth="400.0" spacing="20.0" style="-fx-border-color: #41404C; -fx-border-width: 10px; -fx-background-radius: 3px; -fx-background-color: #5D5C6B;" styleClass="#5D5C6B" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <StackPane prefHeight="0.0" prefWidth="360.0">
+         <children>
+            <Label fx:id="output_Calc" text="0" textFill="#d8da40" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets right="20.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" stroke="#00000044" strokeType="INSIDE" strokeWidth="2.0" width="340.0">
+               <fill>
+                  <RadialGradient centerX="0.5276243093922652" centerY="0.5" cycleMethod="REFLECT" focusDistance="0.011494252873563315" radius="0.04597701149425287">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.14148572087287903" green="0.08799999952316284" blue="0.4000000059604645" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.08799999952316284" green="0.4000000059604645" blue="0.1972000002861023" opacity="0.9083969593048096" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.18899047374725342" green="0.8199999928474426" blue="0.164000004529953" opacity="0.3700000047683716" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <effect>
+                  <DropShadow />
+               </effect></Rectangle>
+            <Label fx:id="output" text="0" textFill="#0a0a0a" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets right="20.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_del" mnemonicParsing="false" onAction="#onProgressAllClean" prefHeight="37.0" prefWidth="166.0" style="-fx-background-radius: 13;" text="AC">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="\%">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_divide" mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="/">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_7" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="7">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_8" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="8">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_9" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="9">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_mult" mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="x">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_4" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="4">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_5" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_6" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="6">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_minus" mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="-">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_1" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_2" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="2">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn_3" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_add" mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="+">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_0" mnemonicParsing="false" onAction="#onProcessNumber" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn_dot" mnemonicParsing="false" onAction="#onProcessDot" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text=".">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_backspace" mnemonicParsing="false" onAction="#onProgressClean" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="DEL">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_equals" mnemonicParsing="false" onAction="#onProcessOperator" prefHeight="50.0" prefWidth="75.0" style="-fx-background-radius: 13;" text="=">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect>
+      </HBox>
+      <Arc fill="#fdff1f" length="270.0" radiusX="16.0" radiusY="14.0" startAngle="45.0" stroke="BLACK" strokeWidth="2.0" type="ROUND">
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.22368420660495758" green="0.20918616652488708" blue="0.20918616652488708" />
+               </color>
+            </InnerShadow>
+         </effect></Arc>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</VBox>
